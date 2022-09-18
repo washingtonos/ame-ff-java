@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "ce8f5f82-2283-4af3-83bc-c65b9dce4996",
+		"name": "Cards",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4736417"
+	},
+	"item": [
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "FindCardById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/card/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"card",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Flash\",\n    \"description\": \"Barry Allen\",\n    \"imageUrl\": \"https://www.dccomics.com/sites/default/files/Char_Gallery_Flash_758_6055049612af35.61135649.jpg\",\n    \"strength\": 3,\n    \"speed\": 5,\n    \"intellect\": 4,\n    \"gear\": \"3\",\n    \"skill\": \"4\",\n    \"originId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/card",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"card"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "card-origin",
+			"item": [
+				{
+					"name": "FindCardOriginById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/card-origin/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"card-origin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Card Origin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Marvel\",\n    \"description\": \"Origin Marvel\",\n    \"creator\": \"Stan Lee\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/card-origin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"card-origin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
