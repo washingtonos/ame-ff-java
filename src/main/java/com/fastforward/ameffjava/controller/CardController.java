@@ -1,6 +1,6 @@
 package com.fastforward.ameffjava.controller;
 
-import com.fastforward.ameffjava.controller.request.CreateCardRequest;
+import com.fastforward.ameffjava.controller.request.CardRequest;
 import com.fastforward.ameffjava.model.Card;
 import com.fastforward.ameffjava.service.CardService;
 import org.slf4j.Logger;
@@ -34,7 +34,7 @@ public class CardController {
   }
 
   @PostMapping
-  public  Card createCard(@RequestBody CreateCardRequest createCardRequest){
-    return cardService.createCard(createCardRequest);
+  public  Card createCard(@RequestBody CardRequest cardRequest){
+    return cardService.createCard(cardRequest);
   }
 }

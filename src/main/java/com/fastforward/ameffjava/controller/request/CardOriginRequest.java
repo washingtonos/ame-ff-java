@@ -1,6 +1,6 @@
 package com.fastforward.ameffjava.controller.request;
 
-public class CreateCardOriginRequest {
+public class CardOriginRequest {
 
   private String name;
 

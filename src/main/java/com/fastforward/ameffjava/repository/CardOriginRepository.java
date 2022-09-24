@@ -1,13 +1,9 @@
 package com.fastforward.ameffjava.repository;
 
 import com.fastforward.ameffjava.model.CardOrigin;
-import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CardOriginRepository {
-
-  CardOrigin save(CardOrigin cardOrigin);
-
-  Optional<CardOrigin> findById(int id);
+public interface CardOriginRepository  extends JpaRepository<CardOrigin, Long> {
 }

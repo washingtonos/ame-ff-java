@@ -1,6 +1,6 @@
 package com.fastforward.ameffjava.controller.request;
 
-public class CreateCardRequest {
+public class CardRequest {
 
   private String name;
 
@@ -84,7 +84,7 @@ public class CreateCardRequest {
     this.intellect = intellect;
   }
 
-  public int getOriginId() {
+  public long getOriginId() {
     return originId;
   }
 

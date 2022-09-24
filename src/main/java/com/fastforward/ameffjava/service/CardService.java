@@ -1,6 +1,6 @@
 package com.fastforward.ameffjava.service;
 
-import com.fastforward.ameffjava.controller.request.CreateCardRequest;
+import com.fastforward.ameffjava.controller.request.CardRequest;
 import com.fastforward.ameffjava.exception.EntityNotFoundException;
 import com.fastforward.ameffjava.model.Card;
 import com.fastforward.ameffjava.repository.CardOriginRepository;
@@ -21,15 +21,15 @@ public class CardService {
     this.cardOriginRepository = cardOriginRepository;
   }
 
-  public Card findById(int id){
+  public Card findById(long id){
     return this.cardRepository.findById(id)
         .orElseThrow(() -> new EntityNotFoundException("Card id [" + id + " ] not found."));
   }
 
-  public Card createCard(CreateCardRequest cardRequest){
+  public Card createCard(CardRequest cardRequest){
 
-//    var cardOrigin = cardOriginRepository.findById(cardRequest.getOriginId())
-//        .orElseThrow(() -> new EntityNotFoundException("Card origin id ["+ cardRequest.getOriginId() + "] not found" ));
+    var cardOrigin = cardOriginRepository.findById(cardRequest.getOriginId())
+        .orElseThrow(() -> new EntityNotFoundException("Card origin id ["+ cardRequest.getOriginId() + "] not found" ));
 
     var card = new Card();
 
@@ -41,7 +41,7 @@ public class CardService {
     card.setSkill(cardRequest.getSkill());
     card.setSpeed(cardRequest.getSpeed());
     card.setIntellect(cardRequest.getIntellect());
-//    card.setOrigin(cardOrigin);
+    card.setOrigin(cardOrigin);
     card.setCreatedAt(LocalDateTime.now());
     card.setUpdateAt(LocalDateTime.now());
 
