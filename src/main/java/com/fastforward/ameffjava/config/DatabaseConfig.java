@@ -10,14 +10,14 @@ import org.springframework.context.annotation.Configuration;
 public class DatabaseConfig {
 
   private static final Logger LOG = LogManager.getLogger(DatabaseConfig.class);
-
+  
   @Value("${database.url}")
   private String url;
 
-  @Value("$database.username")
+  @Value("${database.username}")
   private String username;
 
-  @Value("$database.password")
+  @Value("${database.password}")
   private String password;
 
   public String getUrl() {

@@ -4,6 +4,14 @@ server:
     include-message: always
     include-exception: false
 
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-admin-password: example
+        web-allow-others: true
+
 database:
   url: jdbc:h2:file:./database/db_cards
   username: root

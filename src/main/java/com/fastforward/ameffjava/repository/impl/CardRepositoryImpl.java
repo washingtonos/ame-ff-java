@@ -56,7 +56,7 @@ public class CardRepositoryImpl implements CardRepository {
           card.setGear(resultSet.getInt("gear"));
           card.setIntellect(resultSet.getInt("intellect"));
           card.setCreatedAt(resultSet.getTimestamp("created_at").toLocalDateTime());
-          card.setUpdateAt(resultSet.getTimestamp("update_at").toLocalDateTime());
+          card.setUpdateAt(resultSet.getTimestamp("updated_at").toLocalDateTime());
 
           origin.setId(resultSet.getInt("origin_id"));
           card.setOrigin(origin);
@@ -74,7 +74,7 @@ public class CardRepositoryImpl implements CardRepository {
 
   @Override
   public Card save(Card card) {
-    String insertQuery = "INSERT INTO card (name, description, image_url, strength, speed, skill, gear, intellect, created_at, update_at, origin_id)"
+    String insertQuery = "INSERT INTO card (name, description, image_url, strength, speed, skill, gear, intellect, created_at, updated_at, origin_id)"
         + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     try (Connection connection = connectionFactory.getConnection()){
