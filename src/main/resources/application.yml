@@ -3,3 +3,8 @@ server:
   error:
     include-message: always
     include-exception: false
+
+database:
+  url: jdbc:h2:file:./database/db_cards
+  username: root
+  password: root
